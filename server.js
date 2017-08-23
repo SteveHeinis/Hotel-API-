@@ -62,22 +62,6 @@
 	});
 	});
 
-	app.put('/reservations/:id', (req, res) => {
-		const _id=req.params.id;
-		Reservation.findOneAndUpdate({_id}, req.body, {new: true}, (err, updateReservation) => {
-		if (err) res.send("could not update reservation");
-		res.send(updateReservation);
-	});
-	});
-
-	app.delete('/reservations/:id', (req, res) => {
-            const _id=req.params.id;
-            Reservation.remove({_id}, (err, removeReservation) => {
-              if (err) res.send({err: 'Cannot delete reservation'});
-              res.send(removeReservation);
-            });
-          });
-
 
 	app.listen(3008, () => {
 		console.log("Hotel is online");

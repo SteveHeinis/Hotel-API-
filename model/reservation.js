@@ -5,7 +5,7 @@
 		name: String,
 		numberOfPerson: Number,
 		numberOfNight: Number,
-
+		cost: Number
 	});
 
 	module.exports = mongoose.model('Reservation', reservation);
